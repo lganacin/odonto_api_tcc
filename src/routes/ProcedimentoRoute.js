@@ -4,7 +4,7 @@ const router = express.Router()
 const procedimentoService = require("./../services/ProcedimentoService")
 const {AuthMiddleware} = require("../middlewares/AuthMiddleware");
 
-router.get("", AuthMiddleware.apply(['Gerente']),async (req, res) => {
+router.get("", async (req, res) => {
   try {
     let resposta = await procedimentoService.buscarTodos()
     res.json(resposta)

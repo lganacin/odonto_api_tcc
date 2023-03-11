@@ -43,7 +43,7 @@ router.get(
         };
         const user =  await authenticateGoogle(formatted_user)
         const query = qs.stringify(user)
-        return res.redirect('http://localhost:8080/cadastro?'+query)
+        return res.redirect('https://appodontotcc.netlify.app/cadastro?'+query)
     }
 );
 

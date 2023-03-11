@@ -4,7 +4,7 @@ const router = express.Router()
 const pacienteService = require("./../services/PacienteService")
 const {AuthMiddleware} = require("../middlewares/AuthMiddleware");
 
-router.get("", AuthMiddleware.apply(['Gerente', 'Dentista']),async (req, res) => {
+router.get("",async (req, res) => {
   try {
     let resposta = await pacienteService.buscarTodos()
     res.json(resposta)

@@ -4,7 +4,7 @@ const router = express.Router()
 const salaService = require("./../services/SalaService")
 const {AuthMiddleware} = require("../middlewares/AuthMiddleware");
 
-router.get("", AuthMiddleware.apply(['Gerente']),async (req, res) => {
+router.get("", async (req, res) => {
   try {
     let resposta = await salaService.buscarTodos()
     res.json(resposta)
