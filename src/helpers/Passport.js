@@ -16,7 +16,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_API_KEY,
             clientSecret: process.env.GOOGLE_API_SECRET,
-            callbackURL: "/auth/google/callback",
+            callbackURL: "https://www.directcontrol.dev.br/odonto/auth/google/callback",
             scope: "user:email"
         },
         (accessToken, refreshToken, profile, done) => {
