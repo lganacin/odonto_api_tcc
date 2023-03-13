@@ -1,4 +1,4 @@
-const {login, authenticateGoogle} = require("../services/AuthService");
+const { login, authenticateGoogle } = require("../services/AuthService");
 const router = require("express").Router()
 const passport = require("passport");
 const qs = require('querystring')
@@ -15,7 +15,7 @@ router.post('/login', async (req, res) => {
         }
 
         if (errors.length > 0) {
-            return res.status(400).send({errors})
+            return res.status(400).send({ errors })
         }
         const user = await login(req.body)
         return res.status(200).send(user)
@@ -38,12 +38,12 @@ router.get(
         let formatted_user = {
             code: req.user.id,
             name: req.user.displayName,
-            email:  req.user.emails[0].value,
+            email: req.user.emails[0].value,
             active: true
         };
-        const user =  await authenticateGoogle(formatted_user)
+        const user = await authenticateGoogle(formatted_user)
         const query = qs.stringify(user)
-        return res.redirect('https://appodontotcc.netlify.app/cadastro?'+query)
+        return res.redirect('http://191.252.210.189:8081/cadastro?' + query)
     }
 );
 
