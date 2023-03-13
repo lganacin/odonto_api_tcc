@@ -43,7 +43,7 @@ router.get(
         };
         const user = await authenticateGoogle(formatted_user)
         const query = qs.stringify(user)
-        return res.redirect('http://191.252.210.189:8081/cadastro?' + query)
+        return res.redirect('http://191.252.210.189:8081/#/cadastro?' + query)
     }
 );
 
